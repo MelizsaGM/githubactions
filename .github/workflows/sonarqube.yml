@@ -14,10 +14,15 @@ jobs:
   sonarcloud:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v2
+      with:
+        # Disabling shallow clone is recommended for improving relevancy of reporting
+        fetch-depth: 0
     - name: Set up JDK
       uses: actions/setup-java@v2
       with:
         java-version: '11'
+        distribution: 'adopt'
     #- name: Coverage
       #run: mvn sonar:sonar -Dsonar.coverage.jacoco.xmlReportPaths=${project.build.directory}/src/test/java/jacoco/jacoco.xml
     - name: SonarCloud Scan
