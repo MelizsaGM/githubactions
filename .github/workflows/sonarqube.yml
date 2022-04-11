@@ -19,7 +19,7 @@ jobs:
         # Disabling shallow clone is recommended for improving relevancy of reporting
         fetch-depth: 0
     - name: SonarCloud Scan
-      uses: org.sonarsource.scanner.maven:sonar@master
+      uses: sonarsource/org.sonarsource.scanner.maven:sonar@master
       env:
         GITHUB_TOKEN: ${{ secrets.GH_SQ }}
         SONAR_TOKEN: ${{ secrets.SQSECRET }}
