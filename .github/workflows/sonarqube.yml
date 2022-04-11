@@ -14,10 +14,10 @@ jobs:
   sonarcloud:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - name: Set up JDK
+      uses: actions/setup-java@v1
       with:
-        # Disabling shallow clone is recommended for improving relevancy of reporting
-        fetch-depth: 0
+        java-version: '11'
     - name: Coverage
       run: mvn sonar:sonar -Pcoverage
     - name: SonarCloud Scan
