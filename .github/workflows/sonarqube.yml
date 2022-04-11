@@ -5,7 +5,10 @@ on:
     branches:
       - master
   pull_request:
-      types: [opened, synchronize, reopened]
+    branches: [ master ]
+  workflow_dispatch:
+  #pull_request:
+      #types: [opened, synchronize, reopened]
 name: Main Workflow
 jobs:
   sonarcloud:
