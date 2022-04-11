@@ -23,6 +23,7 @@ jobs:
       with:
         java-version: '11'
         distribution: 'adopt'
+     #
     - name: Build project
       run: mvn test
     - name: SonarCloud Scan
