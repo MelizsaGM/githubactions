@@ -24,7 +24,7 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
     - name: Build
-      run: mvn test 
+      run: mvn clean jacoco:prepare-agent install jacoco:report
     #- name: Build project
       #run: mvn -B package -Pcoverage    
       #mvn test
