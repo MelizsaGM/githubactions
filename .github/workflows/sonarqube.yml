@@ -24,7 +24,7 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
     - name: Jacoco
-      run: mvn -X clean verify sonar:sonar 
+      run: mvn clean verify 
     - name: Build project
       run: mvn -B package -Pcoverage    
       #mvn test
