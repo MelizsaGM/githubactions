@@ -24,7 +24,7 @@ jobs:
         java-version: '11'
         distribution: 'adopt'
     - name: Build project
-      run: mvn -Dsonar.coverage.jacoco.xmlReportPaths= ../app-it/target/site/jacoco-aggregate/jacoco.xml sonar:sonar -Pcoverage
+      run: mvn test
     - name: SonarCloud Scan
       run: mvn -B verify sonar:sonar -Dsonar.projectKey=MelizsaGM_testingsq -Dsonar.organization=melizsagm -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN
       env:
